@@ -25,11 +25,18 @@ function getWeather(q) {
   });
 }
 
+const allCities = []
+
 function watchForm() {
   $('form').submit(event => {
     event.preventDefault();
     $("#js-error-message").text("")
     const cityName = $('#js-search-term').val();
+    if (allCities.includes(cityName)) {
+     $("#js-error-message").text(`You already know the weather for ${cityName}`)
+     return 
+    }
+    allCities.push(cityName)
     $("#js-error-message").text("");
     $("#js-search-term").val("");
     $("js-search-term").focus();
