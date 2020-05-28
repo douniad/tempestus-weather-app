@@ -1,5 +1,7 @@
 # Tempestus Weather App
 
+![weather.jpg]
+
 ## Summary
 
 This app allows users to search for any city in the world and be shown the current weather conditions there. Tempestus can 
