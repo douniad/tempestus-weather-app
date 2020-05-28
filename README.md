@@ -15,4 +15,4 @@ display multiple cities at once in a synoptic manner on mobile, tablet and large
 
 ## Demo 
 
-https://douniad.github.io/tempestus-weather-app/
+[Live App](https://douniad.github.io/tempestus-weather-app/)
