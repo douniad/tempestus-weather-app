@@ -1,6 +1,6 @@
 # Tempestus Weather App
 
-![weather.jpg]
+![Screenshot](weather.jpg)
 
 ## Summary
 
