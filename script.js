@@ -3,6 +3,8 @@
 const appid = "f545988442b3d003b6afda2af5c926c7"
 const searchURL = 'https://api.openweathermap.org/data/2.5/weather' 
 
+let res 
+
 function formatQueryParams(params) {
 const queryItems = Object.keys(params)
 .map(key => `${key}=${params[key]}`)
@@ -18,11 +20,13 @@ function getWeather(q) {
  const queryString = formatQueryParams(params)
  const url = searchURL+ '?' + queryString;
 
+
+
  return fetch(url)
- .then(response => response.json())    
- .catch(() => {
-    msg.text = "Please search for a valid city";
-  });
+ .then(response =>  {
+   res = response
+   return response.json()
+  })    
 }
 
 const allCities = []
@@ -43,7 +47,7 @@ function watchForm() {
     getWeather(cityName)
     .then(displayWeather)
     .catch(error => {
-      $('#js-error-message').text(`Please search for a valid city!`);
+      $('#js-error-message').text(`${res.status} - Please search for a valid city!`);
     })
   })
 }
